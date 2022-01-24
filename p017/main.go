@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 
-	. "github.com/youngzhu/go-leetcode/p017/v0"
+	//. "github.com/youngzhu/go-leetcode/p017/v0"
+	. "github.com/youngzhu/go-leetcode/p017/queue"
 )
 
 /*
