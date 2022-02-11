@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	v2 "github.com/youngzhu/go-leetcode/p322/v2"
+	v3 "github.com/youngzhu/go-leetcode/p322/v3"
 )
 
 /*
@@ -37,5 +37,5 @@ import (
 func main() {
 	coins := []int{1, 2, 5}
 	amount := 11
-	fmt.Println(v2.CoinChange(coins, amount))
+	fmt.Println(v3.CoinChange(coins, amount))
 }
