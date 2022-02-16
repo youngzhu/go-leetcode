@@ -44,9 +44,9 @@ func findDuplicate(nums []int) int {
 
 	// slow==fast，是环开始的地方，重复的数字一定在这之前
 	/*
-	0-3-4-2-3
-	    |<--|
-	 */
+		0-3-4-2-3
+		    |<--|
+	*/
 	p1, p2 := 0, slow
 	for p1 != p2 {
 		p1 = nums[p1]
