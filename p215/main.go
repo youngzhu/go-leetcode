@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	v1 "github.com/youngzhu/go-leetcode/p215/v1"
+	v2 "github.com/youngzhu/go-leetcode/p215/v2"
 )
 
 /*
@@ -27,7 +27,7 @@ import (
 */
 
 func main() {
-	got := v1.FindKthLargest([]int{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4)
+	got := v2.FindKthLargest([]int{3, 2, 3, 1, 2, 4, 5, 5, 6}, 4)
 	want := 4
 	if got != want {
 		fmt.Printf("got: %d, want: %d", got, want)
