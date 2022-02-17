@@ -25,6 +25,8 @@ import "fmt"
 链接：https://leetcode-cn.com/problems/top-k-frequent-elements
 */
 func topKFrequent(nums []int, k int) []int {
+	ans := make([]int, k) // 结果
+
 	// 使用map计算频率
 	// key: num; value: frequent
 	numFrequentMap := make(map[int]int)
@@ -39,6 +41,7 @@ func topKFrequent(nums []int, k int) []int {
 		}
 		numFrequentMap[num] = frequent
 	}
+
 	// 只有一个数字
 	if len(numFrequentMap) == 1 {
 		return nums[0:1]
@@ -48,6 +51,15 @@ func topKFrequent(nums []int, k int) []int {
 	frequentMap := make(map[int]bool)
 	for _, v := range numFrequentMap {
 		frequentMap[v] = true
+	}
+
+	// 只有一个频率
+	if len(frequentMap) == 1 {
+		kk := 0
+		for num, _ := range numFrequentMap {
+			ans[kk] = num
+			kk++
+		}
 	}
 
 	//fmt.Println("numFrequentMap:", numFrequentMap)
@@ -64,7 +76,6 @@ func topKFrequent(nums []int, k int) []int {
 	topK := findTopK(arr, k)
 
 	// 反向查找，根据频率找到数字
-	ans := make([]int, k)
 	count := 0
 	// 频率一定要从大到小
 	// 可能不同的数字具有相同的频率
