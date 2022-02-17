@@ -27,9 +27,6 @@ func FindKthLargest(nums []int, k int) int {
 // nums[parent]>=nums[leftChild]
 // nums[parent]>=nums[rightChild]
 func sink(nums []int, parent, n int) {
-	if x := 2 * parent; x <= n {
-
-	}
 	for {
 		leftChild := 2*parent + 1
 		if leftChild > n {
