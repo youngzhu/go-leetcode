@@ -1,16 +1,25 @@
 package v3
 
 // 堆实现
-// 结果：稍有进步， 3.3m vs 3.5m
+// 结果：同v2效果相当
+/*
+### 解题思路
+1. 设计并实现一个最小堆，堆的最大容量为k
+2. 先用前k个元素将堆填满
+3. k之后的元素，与堆顶元素比较。如果num[i]>heap.top，则从heap中删除一个元素，num[i]入堆
+
+关键点：前K个最大的元素中，最小的那一个就是题目要求的第K大的元素，即堆的顶元素
+*/
 
 func FindKthLargest(nums []int, k int) int {
 	heap := newMinimumHeap(k)
 
 	for _, num := range nums {
-		if k > 0 {
+		if k > 0 { // 先将堆填满
 			heap.Insert(num)
 			k--
 		} else {
+			// 用更大的值将堆中最小的值替换出去
 			if num > heap.GetMinimum() {
 				heap.Remove()
 				heap.Insert(num)
@@ -18,6 +27,8 @@ func FindKthLargest(nums []int, k int) int {
 		}
 	}
 
+	// 前K个最大的元素中，最小的那一个
+	// 即是题目要求的第K大的元素
 	return heap.GetMinimum()
 }
 
@@ -98,7 +109,7 @@ func (h *MinimumHeap) getRightChild(p int) int {
 }
 
 func (h *MinimumHeap) getParent(i int) int {
-	if i <= 0 || i >= h.size {
+	if i <= 0 || i >= h.capacity {
 		return -1
 	}
 	return (i - 1) / 2
