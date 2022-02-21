@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	v1 "github.com/youngzhu/go-leetcode/p055/v1"
+	v2 "github.com/youngzhu/go-leetcode/p055/v2"
 )
 
 /*
@@ -34,11 +34,12 @@ var testCases = []struct {
 }{
 	{[]int{0}, true},
 	{[]int{0, 1}, false},
+	{[]int{2, 3, 1, 1, 4}, true},
 }
 
 func main() {
 	for _, tc := range testCases {
-		got := v1.CanJump(tc.nums)
+		got := v2.CanJump(tc.nums)
 		want := tc.result
 		if got != want {
 			fmt.Printf("got: %v, want: %v\n", got, want)
