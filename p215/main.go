@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	v3 "github.com/youngzhu/go-leetcode/p215/v3"
+	v4 "github.com/youngzhu/go-leetcode/p215/v4"
 )
 
 /*
@@ -38,10 +38,10 @@ var testCases = []struct {
 
 func main() {
 	for _, tc := range testCases {
-		got := v3.FindKthLargest(tc.nums, tc.k)
+		got := v4.FindKthLargest(tc.nums, tc.k)
 		want := tc.result
 		if got != want {
-			fmt.Printf("got: %d, want: %d", got, want)
+			fmt.Printf("got: %d, want: %d\n", got, want)
 		} else {
 			fmt.Println("ok")
 		}

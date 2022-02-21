@@ -1,2 +1,2 @@
 # go-leetcode
-LeetCode with Golang
+LeetCode（力扣）刷题，练习Golang
