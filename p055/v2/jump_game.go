@@ -18,9 +18,12 @@ func CanJump(nums []int) bool {
 		if i <= longest { // 说明i可到达
 			longest = max(longest, i+num)
 		}
+		if longest >= n-1 {
+			return true
+		}
 	}
 
-	return longest >= n-1
+	return false
 }
 
 func max(i, j int) int {
