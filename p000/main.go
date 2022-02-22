@@ -26,4 +26,21 @@ func main() {
 		}
 	}
 
+	//for _, tc := range testCases {
+	//	got := searchRange(tc.nums, tc.target)
+	//	want := tc.result
+	//	ok := true
+	//	for i := range want {
+	//		if got[i] != want[i] {
+	//			ok = false
+	//			break
+	//		}
+	//	}
+	//
+	//	if ok {
+	//		fmt.Println("ok")
+	//	} else {
+	//		fmt.Printf("got: %d, want: %d\n", got, want)
+	//	}
+	//}
 }
