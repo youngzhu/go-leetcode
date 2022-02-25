@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	v1 "github.com/youngzhu/go-leetcode/offer/p04/v1"
+	v2 "github.com/youngzhu/go-leetcode/offer/p04/v2"
 )
 
 /*
@@ -55,7 +55,7 @@ var testCases = []struct {
 
 func main() {
 	for _, tc := range testCases {
-		got := v1.FindNumberIn2DArray(tc.matrix, tc.target)
+		got := v2.FindNumberIn2DArray(tc.matrix, tc.target)
 		want := tc.result
 		if got != want {
 			fmt.Printf("got: %v, want: %v\n", got, want)
