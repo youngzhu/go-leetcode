@@ -1,8 +1,8 @@
-package main
+package v1
 
 import "strconv"
 
-// 动态规划
+// 常规的动态规划（用数组）
 
 func translateNum(num int) int {
 	s := strconv.Itoa(num)
@@ -11,7 +11,7 @@ func translateNum(num int) int {
 	dp := make([]int, n+1)
 	dp[0], dp[1] = 1, 1
 	for i := 2; i < n; i++ {
-		ss := string(s[i-1 : i])
+		ss := string(s[i-1 : i+1])
 		if ss >= "10" && ss <= "25" {
 			dp[i] = dp[i-1] + dp[i-2]
 		} else {
