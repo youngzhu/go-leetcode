@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	v1 "github.com/youngzhu/go-leetcode/p005/v1"
 )
 
 /*
@@ -25,39 +26,21 @@ import (
 链接：https://leetcode-cn.com/problems/longest-palindromic-substring
 */
 var testCases = []struct {
-	nums   []int
-	k      int
-	result int
+	s      string
+	result string
 }{
-	{[]int{2, 1}, 2, 1},
+	{"cbbd", "bb"},
+	{"bb", "bb"},
 }
 
 func main() {
 	for _, tc := range testCases {
-		got := 0
+		got := v1.LongestPalindrome(tc.s)
 		want := tc.result
 		if got != want {
-			fmt.Printf("got: %d, want: %d\n", got, want)
+			fmt.Printf("got: %v, want: %v\n", got, want)
 		} else {
 			fmt.Println("ok")
 		}
 	}
-
-	//for _, tc := range testCases {
-	//	got := searchRange(tc.nums, tc.target)
-	//	want := tc.result
-	//	ok := true
-	//	for i := range want {
-	//		if got[i] != want[i] {
-	//			ok = false
-	//			break
-	//		}
-	//	}
-	//
-	//	if ok {
-	//		fmt.Println("ok")
-	//	} else {
-	//		fmt.Printf("got: %d, want: %d\n", got, want)
-	//	}
-	//}
 }
