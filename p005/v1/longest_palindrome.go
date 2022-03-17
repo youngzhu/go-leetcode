@@ -22,6 +22,9 @@ func LongestPalindrome(s string) string {
 	var theRange indexRange
 	// 1位开始扩展
 	for i := 1; i < n-1; i++ {
+		if n-i < theRange.length()/2 { // 加不加这个判断，效果不大
+			break
+		}
 		rangeOne := extendAroundCenter(s, i, i)
 		if rangeOne.length() > theRange.length() {
 			theRange = rangeOne
@@ -29,6 +32,9 @@ func LongestPalindrome(s string) string {
 	}
 	// 2位开始扩展
 	for i := 0; i < n-1; i++ {
+		if n-i < theRange.length()/2 {
+			break
+		}
 		rangeTwo := extendAroundCenter(s, i, i+1)
 		if rangeTwo.length() > theRange.length() {
 			theRange = rangeTwo
