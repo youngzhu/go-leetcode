@@ -20,7 +20,7 @@ func main() {
 		got := 0
 		want := tc.result
 		if got != want {
-			fmt.Printf("got: %d, want: %d\n", got, want)
+			fmt.Printf("got: %v, want: %v\n", got, want)
 		} else {
 			fmt.Println("ok")
 		}
