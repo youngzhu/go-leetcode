@@ -34,9 +34,11 @@ func LongestPalindrome(s string) string {
 		}
 	}
 
-	begin := theRange.begin / 2
-	end := begin + theRange.length()/2
-	return s[begin:end]
+	//begin := theRange.begin / 2
+	//end := begin + theRange.length()/2
+	//return s[begin:end]
+
+	return s[theRange.begin/2 : (theRange.end)/2]
 }
 
 // 以[left, right]为中心扩散的回文起点和终点
