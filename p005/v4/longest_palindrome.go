@@ -18,15 +18,10 @@ func LongestPalindrome(s string) string {
 		return s
 	}
 
-	t := "#"
-	for i := 0; i < n; i++ {
-		t += string(s[i]) + "#"
-	}
-	t += "#"
+	t := manacher(s)
 	nt := len(t)
 
 	var theRange indexRange
-	// 1位开始扩展
 	for i := 1; i < nt-1; i++ {
 		rangeOne := extendAroundCenter(t, i, i)
 		if rangeOne.length() > theRange.length() {
@@ -39,6 +34,19 @@ func LongestPalindrome(s string) string {
 	//return s[begin:end]
 
 	return s[theRange.begin/2 : (theRange.end)/2]
+}
+
+// 每个字符之间插入#
+func manacher(s string) (t string) {
+	n := len(s)
+
+	t = "#"
+	for i := 0; i < n; i++ {
+		t += string(s[i]) + "#"
+	}
+	t += "#"
+
+	return
 }
 
 // 以[left, right]为中心扩散的回文起点和终点
