@@ -39,27 +39,35 @@ func LongestPalindrome(s string) string {
 }
 
 // 每个字符之间插入#
-//func manacher(s string) (t string) {
-//	n := len(s)
-//
-//	strings.Join()
-//
-//	return
-//}
+// 比Join更进一步，虽然Join也是由Builder实现的
+// 时间：8ms vs 12ms
+// 空间：3.2m vs 5.2m
+func manacher(s string) string {
+	var b strings.Builder
+	b.WriteString("#")
+
+	for _, c := range []byte(s) {
+		b.WriteByte(c)
+		b.WriteString("#")
+	}
+	b.WriteString("#")
+
+	return b.String()
+}
 
 // 看似多花了ss的空间
 // 其实，时间（减少了一半）和空间（减少了1/4）都有了提升
 // 由此可见Join的功效
-func manacher(s string) string {
-	bytes := ([]byte)(s)
-	ss := make([]string, len(s))
-	for i, b := range bytes {
-		ss[i] = string(b)
-	}
-	t := strings.Join(ss, "#")
-
-	return "#" + t + "#"
-}
+//func manacher(s string) string {
+//	bytes := ([]byte)(s)
+//	ss := make([]string, len(s))
+//	for i, b := range bytes {
+//		ss[i] = string(b)
+//	}
+//	t := strings.Join(ss, "#")
+//
+//	return "#" + t + "#"
+//}
 
 //func manacher(s string) (t string) {
 //	n := len(s)
