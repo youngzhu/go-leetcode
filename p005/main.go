@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	v2 "github.com/youngzhu/go-leetcode/p005/v2"
+	v4 "github.com/youngzhu/go-leetcode/p005/v4"
 )
 
 /*
@@ -36,7 +36,7 @@ var testCases = []struct {
 
 func main() {
 	for _, tc := range testCases {
-		got := v2.LongestPalindrome(tc.s)
+		got := v4.LongestPalindrome(tc.s)
 		want := tc.result
 		if got != want {
 			fmt.Printf("got: %v, want: %v\n", got, want)
