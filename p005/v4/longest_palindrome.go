@@ -38,19 +38,25 @@ func LongestPalindrome(s string) string {
 	return s[theRange.begin/2 : (theRange.end)/2]
 }
 
+//const sep = '#'
+const sep = "#" // byte string 没区别
+
 // 每个字符之间插入#
 // 比Join更进一步，虽然Join也是由Builder实现的
 // 时间：8ms vs 12ms
 // 空间：3.2m vs 5.2m
+// Grow 时间没变化，空间3m
+// const 没变化
 func manacher(s string) string {
 	var b strings.Builder
-	b.WriteString("#")
+	b.Grow(2*len(s) + 1)
 
+	b.WriteString(sep)
 	for _, c := range []byte(s) {
 		b.WriteByte(c)
-		b.WriteString("#")
+		b.WriteString(sep)
 	}
-	b.WriteString("#")
+	b.WriteString(sep)
 
 	return b.String()
 }
